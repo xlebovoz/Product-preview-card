@@ -1,36 +1,122 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png" />
+
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Outfit:wght@100..900&family=Young+Serif&display=swap" rel="stylesheet" />
+
   <title>Frontend Mentor | Product preview card component</title>
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
   <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
+    body {
+      background-color: hsl(30, 38%, 92%);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh; /* чтобы центрировать по вертикали */
+      margin: 0;
+    }
+
+    /* Обертка для фото и блока */
+    .container {
+      display: flex;
+      align-items: stretch; /* чтобы фото и блок были одинаковой высоты */
+    }
+
+    /* Фото слева */
+    .product-image {
+      width: 270px;
+      display: block;
+      border-bottom-left-radius: 10px;
+      border-top-left-radius: 10px;
+    }
+
+    /* Основной блок справа */
+    .main {
+      background-color: hsl(0, 0%, 100%);
+      padding: 20px;
+      width: 230px;
+      height: 370px;
+      border-top-right-radius: 10px;
+      border-bottom-right-radius: 10px;
+      
+      /* Убираем отступы между фото и блоком */
+      margin-left: -1px; /* чтобы убрать зазор между изображением и блоком (если есть) */
+    }
+
+    /* Стиль для кнопки */
+    .buttom {
+      background-color: hsl(158, 36%, 37%);
+      color: hsl(0, 0%, 100%);
+      border-radius: 5px;
+      padding: 10px;
+      text-align: center;
+      
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      
+      cursor: pointer; /* курсор при наведении */
+      
+      margin-top: 20px; /* немного отступа сверху */
+    }
+
+    .buttom span {
+      color: hsl(0, 0%, 100%);
+      font-size: 14px;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      
+      margin-left: 10px; /* отступ между иконкой и текстом */
+    }
+
+    .buttom img {
+      width: 10px;
+    }
+    
+    /* Можно добавить стили для текста внутри main если нужно */
+
+    p {
+      font-family:'Montserrat', sans-serif;
+      font-size: 14px;
+    }
+    
+    h1 {
+      font-family:'Fraunces', serif;
+    }
+    
+    /* Удаляем лишние inline стили внутри HTML для чистоты */
+
+</style>
 </head>
 <body>
 
-  Perfume
-
-  Gabrielle Essence Eau De Parfum
-
-  A floral, solar and voluptuous interpretation composed by Olivier Polge, 
-  Perfumer-Creator for the House of CHANEL.
-
-  $149.99
-  $169.99
-
-  Add to Cart
+<div class="container">
+  <img src="images/image-product-desktop.jpg" alt="товар" class="product-image">
   
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
+  <div class="main">
+    <p style="font-family:'Montserrat', sans-serif; margin: 0; margin-bottom: 20px; margin-top: 10px;">Perfume</p>
+    
+    <h1 style="font-family:'Fraunces', serif; font-weight:bold; margin-top: 0; line-height: 1.0;">Gabrielle Essence Eau De Parfum</h1>
+    
+    <p style="font-family:'Montserrat', sans-serif; font-weight:500;">A floral, solar and voluptuous interpretation composed by Olivier Polge,
+     Perfumer-Creator for the House of CHANEL.</p>
+    
+    <div>
+    <h1 style="font-family:'Fraunces', serif; display: inline;">$149.99</h1>
+    <span>$169.99</span>
+    </div>
+
+    <div class="buttom">
+        <img src="images/icon-cart.svg" alt="иконка">
+        <span>Add to Cart</span>
+    </div>
+  
+ </div>
+</div>
+
 </body>
 </html>
