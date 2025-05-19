@@ -4,11 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png" />
-
-  <link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Outfit:wght@100..900&family=Young+Serif&display=swap" rel="stylesheet" />
-
-  <title>Frontend Mentor | Product preview card component</title>
+  <title>Product Image on Top</title>
 
   <style>
     body {
@@ -16,106 +12,121 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      height: 100vh; /* чтобы центрировать по вертикали */
+      height: 100vh; /* центрирование по вертикали */
       margin: 0;
     }
 
-    /* Обертка для фото и блока */
+    /* Обертка для изображения и блока */
     .container {
       display: flex;
-      align-items: stretch; /* чтобы фото и блок были одинаковой высоты */
+      flex-direction: column; /* изображение сверху */
+      align-items: center; /* центрировать по горизонтали */
+      max-width: 350px; /* ограничиваем ширину */
+      width: 100%;
     }
 
-    /* Фото слева */
+    /* Изображение */
     .product-image {
-      width: 270px;
-      display: block;
-      border-bottom-left-radius: 10px;
+      width: 350px; /* чтобы было адаптивно внутри контейнера */
+      max-width: 350px; /* максимум ширины изображения */
       border-top-left-radius: 10px;
+      border-top-right-radius: 10px;
     }
 
-    /* Основной блок справа */
+    /* Основной блок снизу */
     .main {
       background-color: hsl(0, 0%, 100%);
       padding: 30px;
-      width: 230px;
-      height: 370px;
-      border-top-right-radius: 10px;
-      border-bottom-right-radius: 10px;
+      width: 350px;
+      box-sizing: border-box;
       
-      /* Убираем отступы между фото и блоком */
-      margin-left: -1px; /* чтобы убрать зазор между изображением и блоком (если есть) */
+      border-bottom-left-radius: 10px;
+      border-bottom-right-radius: 10px;
     }
 
     .main p {
       color: hsl(228, 12%, 48%);
       font-size: 14px;
+      font-family:'Montserrat', sans-serif;
+    }
+
+    h1 {
+      font-family:'Fraunces', serif;
+      font-weight:bold;
+      margin-top:0;
+      line-height:1.2;
     }
 
     /* Стиль для кнопки */
     .buttom {
-      background-color: hsl(158, 36%, 37%);
-      color: hsl(0, 0%, 100%);
-      border-radius: 5px;
-      padding: 10px;
-      text-align: center;
+      background-color:hsl(158,36%,37%);
       
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      color:hsl(0,0%,100%);
       
-      cursor: pointer; /* курсор при наведении */
+      border-radius:5px;
       
-      margin-top: 20px; /* немного отступа сверху */
-    }
-
-    .buttom span {
-      color: hsl(0, 0%, 100%);
-      font-size: 14px;
-      font-family: 'Montserrat', sans-serif;
-      font-weight: 700;
+      padding:10px;
       
-      margin-left: 10px; /* отступ между иконкой и текстом */
-    }
+      display:flex;
+      
+      align-items:center;
+      
+      justify-content:center;
 
-    .buttom img {
-      width: 10px;
-    }
-    
-    /* Можно добавить стили для текста внутри main если нужно */
+      
+      cursor:pointer;
 
-    p {
-      font-family:'Montserrat', sans-serif;
-      font-size: 14px;
-    }
-    
-    h1 {
-      font-family:'Fraunces', serif;
-    }
-    
+      
+      margin-top:20px;
 
+}
+
+.buttom span {
+  
+   color:hsl(0,0%,100%);
+   
+   font-size:14px;
+
+   
+   font-family:'Montserrat', sans-serif;
+
+   
+   font-weight:700;
+
+   
+   margin-left:10px;
+
+}
+
+.buttom img {
+  
+   width:10px;
+
+}
 </style>
 </head>
 <body>
 
 <div class="container">
-  <img src="images/image-product-desktop.jpg" alt="товар" class="product-image">
+  <img src="images/image-product-mobile.jpg" alt="товар" class="product-image" />
   
   <div class="main">
-    <p style="font-family:'Montserrat', sans-serif; margin: 0; margin-bottom: 20px; margin-top: 10px;">Perfume</p>
+    <p style="font-family:'Montserrat', sans-serif; margin-bottom: 10px; margin-top: -10px;">Perfume</p>
     
-    <h1 style="font-family:'Fraunces', serif; font-weight:bold; margin-top: 0; line-height: 1.0;">Gabrielle Essence Eau De Parfum</h1>
+    <h1 style="font-family:'Fraunces', serif;">Gabrielle Essence Eau De Parfum</h1>
     
-    <p style="margin-bottom: 20px; font-family:'Montserrat', sans-serif; font-weight:500;">A floral, solar and voluptuous interpretation composed by Olivier Polge,
-     Perfumer-Creator for the House of CHANEL.</p>
+    <p style="margin-bottom:20px; font-family:'Montserrat', sans-serif; font-weight:500;">
+        A floral, solar and voluptuous interpretation composed by Olivier Polge,
+        Perfumer-Creator for the House of CHANEL.
+    </p>
     
-    <div style=" margin-bottom: 30px;">
-    <h1 style="font-family:'Fraunces', serif; display: inline; color: hsl(158, 36%, 37%);">$149.99</h1>
-    <span style="color: hsl(228, 12%, 48%); font-size: 14px;"><s>$169.99</s></span>
+    <div style="margin-bottom:30px;">
+        <h1 style="display:inline; color:hsl(158,36%,37%); margin-right:10px;">$149.99</h1>
+        <span style="color:hsl(228,12%,48%); font-size:14px;"><s>$169.99</s></span>
     </div>
 
     <div class="buttom">
-        <img src="images/icon-cart.svg" alt="иконка">
+        <img src="images/icon-cart.svg" alt="иконка" />
         <span>Add to Cart</span>
     </div>
   
